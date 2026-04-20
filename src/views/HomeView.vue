@@ -1,25 +1,37 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { useUserStore } from '@/stores/userStore'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 
 const userStore = useUserStore()
 const router = useRouter()
+const route = useRoute()
 const { t } = useI18n()
 const email = ref('')
 const password = ref('')
 const errorMessage = ref('')
 
+onMounted(() => {
+  if (userStore.isAuthenticated) {
+    router.replace('/dashboard')
+  }
+})
+
+const getRedirectTarget = () => {
+  const redirect = route.query.redirect
+  return typeof redirect === 'string' && redirect.startsWith('/') ? redirect : '/dashboard'
+}
+
 const handleLogin = () => {
   errorMessage.value = ''
   const success = userStore.login(email.value, password.value)
   if (success) {
-    router.push('/dashboard')
+    router.push(getRedirectTarget())
   } else {
     errorMessage.value = t('auth.invalidCredentials')
   }

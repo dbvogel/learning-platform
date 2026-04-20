@@ -4,9 +4,13 @@ import de from './locales/de.json'
 
 export type MessageSchema = typeof en
 
+const storedLocale = typeof window !== 'undefined'
+  ? window.localStorage.getItem('language')
+  : null
+
 const i18n = createI18n<{ message: MessageSchema }, 'en' | 'de'>({
   legacy: false,
-  locale: localStorage.getItem('language') || 'en',
+  locale: storedLocale === 'de' ? 'de' : 'en',
   fallbackLocale: 'en',
   messages: {
     en,

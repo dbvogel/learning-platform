@@ -51,6 +51,30 @@ const handleDownload = (fileName: string) => {
 
       <!-- Downloads List -->
       <div class="space-y-4">
+        <div v-if="downloadsStore.loading" class="space-y-4">
+          <Card v-for="skeleton in 3" :key="`downloads-skeleton-${skeleton}`" class="border-orange-200">
+            <CardContent class="p-4 sm:p-6">
+              <div class="animate-pulse space-y-3">
+                <div class="h-4 w-2/5 rounded bg-orange-100"></div>
+                <div class="h-3 w-1/4 rounded bg-orange-100"></div>
+                <div class="h-3 w-1/3 rounded bg-orange-100"></div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <Card v-else-if="downloadsStore.error" class="border-red-200">
+          <CardContent class="p-4 sm:p-6">
+            <p class="text-sm text-red-600">{{ downloadsStore.error }}</p>
+          </CardContent>
+        </Card>
+
+        <Card v-else-if="downloadsStore.downloads.length === 0" class="border-orange-200">
+          <CardContent class="p-4 sm:p-6">
+            <p class="text-sm text-slate-600">{{ t('downloads.empty') }}</p>
+          </CardContent>
+        </Card>
+
         <div v-for="download in downloadsStore.downloads" :key="download.id" class="transition-transform duration-300 hover:scale-[1.01]">
           <Card class="hover:shadow-lg border-orange-200">
             <CardContent class="p-4 sm:p-6">

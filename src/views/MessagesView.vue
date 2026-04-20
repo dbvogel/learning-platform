@@ -46,6 +46,31 @@ const handleBack = () => {
 
       <!-- Messages List -->
       <div class="space-y-4">
+        <div v-if="messagesStore.loading" class="space-y-4">
+          <Card v-for="skeleton in 3" :key="`messages-skeleton-${skeleton}`" class="border-purple-200">
+            <CardContent class="p-4 sm:p-6">
+              <div class="animate-pulse space-y-3">
+                <div class="h-4 w-1/3 rounded bg-purple-100"></div>
+                <div class="h-3 w-1/4 rounded bg-purple-100"></div>
+                <div class="h-3 w-5/6 rounded bg-purple-100"></div>
+                <div class="h-3 w-2/3 rounded bg-purple-100"></div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <Card v-else-if="messagesStore.error" class="border-red-200">
+          <CardContent class="p-4 sm:p-6">
+            <p class="text-sm text-red-600">{{ messagesStore.error }}</p>
+          </CardContent>
+        </Card>
+
+        <Card v-else-if="messagesStore.messages.length === 0" class="border-purple-200">
+          <CardContent class="p-4 sm:p-6">
+            <p class="text-sm text-slate-600">{{ t('messages.empty') }}</p>
+          </CardContent>
+        </Card>
+
         <div v-for="message in messagesStore.messages" :key="message.id" class="transition-transform duration-300 hover:scale-[1.01]">
           <Card class="hover:shadow-lg border-purple-200">
             <CardContent class="p-4 sm:p-6">

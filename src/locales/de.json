@@ -40,13 +40,15 @@
     "messages": "Nachrichten",
     "yourInbox": "{count} Nachricht(en)",
     "from": "Von",
-    "subject": "Betreff"
+    "subject": "Betreff",
+    "empty": "Noch keine Nachrichten."
   },
   "downloads": {
     "downloads": "Downloads",
     "filesAvailable": "{count} Datei(en) verfügbar",
     "size": "Größe",
     "date": "Datum",
-    "download": "Herunterladen"
+    "download": "Herunterladen",
+    "empty": "Noch keine Downloads verfügbar."
   }
 }

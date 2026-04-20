@@ -40,13 +40,15 @@
     "messages": "Messages",
     "yourInbox": "{count} message(s)",
     "from": "From",
-    "subject": "Subject"
+    "subject": "Subject",
+    "empty": "No messages yet."
   },
   "downloads": {
     "downloads": "Downloads",
     "filesAvailable": "{count} file(s) available",
     "size": "Size",
     "date": "Date",
-    "download": "Download"
+    "download": "Download",
+    "empty": "No downloads available yet."
   }
 }
