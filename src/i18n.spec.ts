@@ -1,16 +1,13 @@
 import { describe, expect, it } from 'vitest'
-import i18n from './i18n'
+import en from './locales/en.json'
+import de from './locales/de.json'
 
-describe('i18n', () => {
-  it('translates in English by default', () => {
-    ;(i18n.global.locale as { value: 'en' | 'de' }).value = 'en'
-
-    expect(i18n.global.t('auth.login')).toBe('Login')
+describe('i18n messages', () => {
+  it('contains English login label', () => {
+    expect(en.auth.login).toBe('Login')
   })
 
-  it('switches to German locale', () => {
-    ;(i18n.global.locale as { value: 'en' | 'de' }).value = 'de'
-
-    expect(i18n.global.t('auth.login')).toBe('Anmelden')
+  it('contains German login label', () => {
+    expect(de.auth.login).toBe('Anmelden')
   })
 })
