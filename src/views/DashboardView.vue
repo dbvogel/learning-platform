@@ -75,8 +75,8 @@ const navigate = (route: string) => {
                 <h3 class="mb-1 text-lg font-semibold text-slate-900 sm:text-xl">{{ item.title }}</h3>
                 <p class="text-sm text-slate-600">{{ item.description }}</p>
               </div>
-              <div :class="`bg-linear-to-br ${item.color} ml-2 shrink-0 rounded-lg p-3 sm:ml-4 sm:p-4`">
-                <component :is="item.icon" class="h-6 w-6 text-white sm:h-8 sm:w-8" />
+              <div :class="`bg-linear-to-br ${item.color} ml-2 shrink-0 rounded-lg p-2.5 sm:ml-4 sm:p-3`">
+                <component :is="item.icon" class="h-5 w-5 text-white sm:h-6 sm:w-6" />
               </div>
             </CardContent>
           </Card>
