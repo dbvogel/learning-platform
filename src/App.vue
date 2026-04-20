@@ -5,6 +5,8 @@ import AppTopNav from '@/components/AppTopNav.vue'
 <template>
   <div class="min-h-screen bg-slate-50">
     <AppTopNav />
-    <router-view />
+    <main id="main-content" class="min-h-[calc(100vh-56px)]">
+      <router-view />
+    </main>
   </div>
 </template>
