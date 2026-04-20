@@ -1,0 +1,52 @@
+{
+  "common": {
+    "backToDashboard": "Zurück zum Dashboard",
+    "logout": "Abmelden",
+    "signOut": "Abmelden",
+    "endSession": "Beende deine aktuelle Sitzung"
+  },
+  "auth": {
+    "login": "Anmelden",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "invalidCredentials": "Ungültige E-Mail oder Passwort",
+    "enterEmail": "Gib deine E-Mail ein",
+    "enterPassword": "Gib dein Passwort ein",
+    "testAccounts": "Test-Konten:",
+    "welcomeMessage": "Willkommen zur Lernplattform"
+  },
+  "dashboard": {
+    "welcomeBack": "Willkommen zurück, {name}!",
+    "hereYourDashboard": "Hier ist dein persönliches Dashboard",
+    "myProfile": "Mein Profil",
+    "viewManageAccount": "Kontoeinstellungen einsehen und verwalten",
+    "messages": "Nachrichten",
+    "checkInbox": "Überprüfe deinen Posteingang",
+    "downloads": "Downloads",
+    "accessYourFiles": "Greifen Sie auf Ihre Dateien zu"
+  },
+  "nav": {
+    "home": "Startseite",
+    "dashboard": "Dashboard"
+  },
+  "profile": {
+    "myProfile": "Mein Profil",
+    "manageAccount": "Verwalte deine Kontoinformationen",
+    "fullName": "Vollständiger Name",
+    "emailAddress": "E-Mail-Adresse",
+    "userId": "Benutzer-ID"
+  },
+  "messages": {
+    "messages": "Nachrichten",
+    "yourInbox": "{count} Nachricht(en)",
+    "from": "Von",
+    "subject": "Betreff"
+  },
+  "downloads": {
+    "downloads": "Downloads",
+    "filesAvailable": "{count} Datei(en) verfügbar",
+    "size": "Größe",
+    "date": "Datum",
+    "download": "Herunterladen"
+  }
+}

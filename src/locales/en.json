@@ -1,0 +1,52 @@
+{
+  "common": {
+    "backToDashboard": "Back to Dashboard",
+    "logout": "Logout",
+    "signOut": "Sign Out",
+    "endSession": "End your current session"
+  },
+  "auth": {
+    "login": "Login",
+    "email": "Email",
+    "password": "Password",
+    "invalidCredentials": "Invalid email or password",
+    "enterEmail": "Enter your email",
+    "enterPassword": "Enter your password",
+    "testAccounts": "Test accounts:",
+    "welcomeMessage": "Welcome to the learning platform"
+  },
+  "dashboard": {
+    "welcomeBack": "Welcome back, {name}!",
+    "hereYourDashboard": "Here's your personal dashboard",
+    "myProfile": "My Profile",
+    "viewManageAccount": "View and manage your account",
+    "messages": "Messages",
+    "checkInbox": "Check your inbox",
+    "downloads": "Downloads",
+    "accessYourFiles": "Access your files"
+  },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard"
+  },
+  "profile": {
+    "myProfile": "My Profile",
+    "manageAccount": "Manage your account information",
+    "fullName": "Full Name",
+    "emailAddress": "Email Address",
+    "userId": "User ID"
+  },
+  "messages": {
+    "messages": "Messages",
+    "yourInbox": "{count} message(s)",
+    "from": "From",
+    "subject": "Subject"
+  },
+  "downloads": {
+    "downloads": "Downloads",
+    "filesAvailable": "{count} file(s) available",
+    "size": "Size",
+    "date": "Date",
+    "download": "Download"
+  }
+}
