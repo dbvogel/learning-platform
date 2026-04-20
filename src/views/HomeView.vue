@@ -27,17 +27,19 @@ const handleLogin = () => {
 </script>
 
 <template>
-  <div style="background-color: blue; min-height: calc(100vh - 65px); display: flex; align-items: center; justify-content: center;">
-    <Card class="w-full max-w-sm mx-4">
+  <div style="background-color: blue; min-height: calc(100vh - 56px); display: flex; align-items: center; justify-content: center;">
+    <Card class="mx-3 w-full max-w-sm sm:mx-4">
       <CardHeader>
         <CardTitle class="mb-2">{{ t('auth.login') }}</CardTitle>
         <CardDescription>{{ t('auth.testAccounts') }}</CardDescription>
-        <ul class="text-sm text-gray-600 mt-2">
-          <li v-for="user in userStore.users" :key="user.id">{{ user.email }} {{ user.password }}</li>
+        <ul class="mt-2 space-y-1 text-xs text-gray-700 sm:text-sm">
+          <li v-for="user in userStore.users" :key="user.id" class="break-all">
+            {{ user.email }} - {{ user.password }}
+          </li>
         </ul>
       </CardHeader>
       <CardContent>
-        <form @submit.prevent="handleLogin" class="space-y-5">
+        <form @submit.prevent="handleLogin" class="space-y-4 sm:space-y-5">
           <div>
             <Label for="email" class="mb-2">{{ t('auth.email') }}</Label>
             <Input id="email" type="email" v-model="email" :placeholder="t('auth.enterEmail')" required />

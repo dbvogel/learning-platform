@@ -34,8 +34,8 @@ const handleLogout = () => {
 
 <template>
   <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
-    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-      <RouterLink to="/" class="text-lg font-bold tracking-tight text-slate-900">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-3 py-2 sm:gap-4 sm:px-4 sm:py-3">
+      <RouterLink to="/" class="text-base font-bold tracking-tight text-slate-900 sm:text-lg">
         LearnFlow
       </RouterLink>
 
@@ -55,21 +55,21 @@ const handleLogout = () => {
         </RouterLink>
       </nav>
 
-      <div class="flex items-center gap-2">
+      <div class="ml-auto flex items-center gap-1 sm:ml-0 sm:gap-2">
         <LanguageSwitcher />
-        <Button v-if="userStore.isAuthenticated" variant="destructive" size="sm" @click="handleLogout">
+        <Button v-if="userStore.isAuthenticated" variant="destructive" size="sm" class="px-2 text-xs sm:px-3 sm:text-sm" @click="handleLogout">
           {{ t('common.logout') }}
         </Button>
       </div>
     </div>
 
-    <nav class="mx-auto flex max-w-6xl items-center gap-2 overflow-x-auto px-4 pb-3 md:hidden">
+    <nav class="mx-auto flex max-w-6xl items-center gap-2 overflow-x-auto px-3 pb-2 sm:px-4 sm:pb-3 md:hidden">
       <RouterLink
         v-for="item in navItems"
         :key="`mobile-${item.to}`"
         :to="item.to"
         :class="[
-          'whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium transition-colors',
+          'whitespace-nowrap rounded-md px-2 py-1.5 text-xs font-medium transition-colors sm:px-3 sm:py-2 sm:text-sm',
           route.path === item.to
             ? 'bg-slate-900 text-white'
             : 'text-slate-700 hover:bg-slate-100'

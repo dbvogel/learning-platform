@@ -46,30 +46,30 @@ const navigate = (route: string) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-linear-to-br from-slate-50 to-slate-100 p-8">
+  <div class="min-h-screen bg-linear-to-br from-slate-50 to-slate-100 p-4 sm:p-6 lg:p-8">
     <div class="max-w-6xl mx-auto">
       <!-- Header -->
-      <div class="mb-12">
-        <h1 class="text-4xl font-bold text-slate-900 mb-2">{{ t('dashboard.welcomeBack', { name: userStore.currentUser?.name || '' }) }}</h1>
-        <p class="text-slate-600">{{ t('dashboard.hereYourDashboard') }}</p>
+      <div class="mb-6 sm:mb-10 lg:mb-12">
+        <h1 class="mb-2 text-2xl font-bold text-slate-900 sm:text-3xl lg:text-4xl">{{ t('dashboard.welcomeBack', { name: userStore.currentUser?.name || '' }) }}</h1>
+        <p class="text-sm text-slate-600 sm:text-base">{{ t('dashboard.hereYourDashboard') }}</p>
       </div>
 
       <!-- Menu Tiles Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div class="mb-6 grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-3 md:mb-8">
         <div
           v-for="item in menuItems"
           :key="item.title"
           @click="navigate(item.route)"
-          class="cursor-pointer transition-all duration-300 transform hover:scale-105"
+          class="transform cursor-pointer transition-all duration-300 hover:scale-[1.02]"
         >
           <Card class="h-full hover:shadow-xl">
-            <CardContent class="p-8 flex items-center justify-between h-full">
-              <div class="flex-1">
-                <h3 class="text-xl font-semibold text-slate-900 mb-1">{{ item.title }}</h3>
-                <p class="text-slate-600 text-sm">{{ item.description }}</p>
+            <CardContent class="flex h-full items-center justify-between gap-3 p-4 sm:p-6 lg:p-8">
+              <div class="min-w-0 flex-1">
+                <h3 class="mb-1 text-lg font-semibold text-slate-900 sm:text-xl">{{ item.title }}</h3>
+                <p class="text-sm text-slate-600">{{ item.description }}</p>
               </div>
-              <div :class="`bg-linear-to-br ${item.color} p-4 rounded-lg ml-4 shrink-0`">
-                <component :is="item.icon" class="w-8 h-8 text-white" />
+              <div :class="`bg-linear-to-br ${item.color} ml-2 shrink-0 rounded-lg p-3 sm:ml-4 sm:p-4`">
+                <component :is="item.icon" class="h-6 w-6 text-white sm:h-8 sm:w-8" />
               </div>
             </CardContent>
           </Card>
@@ -78,8 +78,8 @@ const navigate = (route: string) => {
 
       <!-- Logout Card -->
       <Card class="border-red-200">
-        <CardContent class="p-6">
-          <div class="flex items-center justify-between">
+        <CardContent class="p-4 sm:p-6">
+          <div class="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
             <div>
               <h3 class="text-lg font-semibold text-slate-900">{{ t('common.signOut') }}</h3>
               <p class="text-slate-600 text-sm">{{ t('common.endSession') }}</p>

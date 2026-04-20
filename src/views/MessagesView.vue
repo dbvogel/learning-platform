@@ -21,10 +21,10 @@ const handleBack = () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-linear-to-br from-purple-50 to-purple-100 p-8">
+  <div class="min-h-screen bg-linear-to-br from-purple-50 to-purple-100 p-4 sm:p-6 lg:p-8">
     <div class="max-w-4xl mx-auto">
       <!-- Header with back button -->
-      <Button @click="handleBack" variant="outline" class="mb-6 flex items-center gap-2">
+      <Button @click="handleBack" variant="outline" class="mb-4 flex items-center gap-2 text-xs sm:mb-6 sm:text-sm">
         <ArrowLeft class="w-4 h-4" />
         {{ t('common.backToDashboard') }}
       </Button>
@@ -32,13 +32,13 @@ const handleBack = () => {
       <!-- Messages Header -->
       <Card class="border-2 border-purple-200 shadow-lg mb-6">
         <CardHeader class="bg-linear-to-r from-purple-400 to-purple-600 text-white rounded-t-lg">
-          <div class="flex items-center gap-4">
-            <div class="bg-white bg-opacity-20 p-3 rounded-full">
-              <MessageSquare class="w-8 h-8" />
+          <div class="flex items-center gap-3 sm:gap-4">
+            <div class="rounded-full bg-white bg-opacity-20 p-2 sm:p-3">
+              <MessageSquare class="h-6 w-6 sm:h-8 sm:w-8" />
             </div>
-            <div>
-              <CardTitle class="text-white text-2xl">{{ t('messages.messages') }}</CardTitle>
-              <CardDescription class="text-purple-100">{{ t('messages.yourInbox', { count: messagesStore.messages.length }) }}</CardDescription>
+            <div class="min-w-0">
+              <CardTitle class="text-xl text-white sm:text-2xl">{{ t('messages.messages') }}</CardTitle>
+              <CardDescription class="text-sm text-purple-100 sm:text-base">{{ t('messages.yourInbox', { count: messagesStore.messages.length }) }}</CardDescription>
             </div>
           </div>
         </CardHeader>
@@ -46,17 +46,17 @@ const handleBack = () => {
 
       <!-- Messages List -->
       <div class="space-y-4">
-        <div v-for="message in messagesStore.messages" :key="message.id" class="transition-transform duration-300 hover:scale-102">
+        <div v-for="message in messagesStore.messages" :key="message.id" class="transition-transform duration-300 hover:scale-[1.01]">
           <Card class="hover:shadow-lg border-purple-200">
-            <CardContent class="p-6">
-              <div class="flex items-start gap-4">
+            <CardContent class="p-4 sm:p-6">
+              <div class="flex items-start gap-3 sm:gap-4">
                 <div class="bg-linear-to-br from-purple-400 to-purple-600 p-3 rounded-lg shrink-0 mt-1">
                   <Mail class="w-5 h-5 text-white" />
                 </div>
                 <div class="flex-1">
-                  <h3 class="text-lg font-semibold text-slate-900">{{ message.subject }}</h3>
+                  <h3 class="text-base font-semibold text-slate-900 sm:text-lg wrap-break-word">{{ message.subject }}</h3>
                   <p class="text-sm text-slate-600 mb-2">{{ t('messages.from') }}: <span class="font-medium">{{ message.from }}</span></p>
-                  <p class="text-slate-700 mb-3">{{ message.content }}</p>
+                  <p class="mb-3 text-sm text-slate-700 sm:text-base wrap-break-word">{{ message.content }}</p>
                   <p class="text-xs text-slate-500">{{ message.date }}</p>
                 </div>
               </div>

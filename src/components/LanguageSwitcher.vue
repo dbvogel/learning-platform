@@ -16,21 +16,22 @@ const changeLanguage = (lang: string) => {
 </script>
 
 <template>
-  <div class="flex items-center gap-2">
-    <Globe class="w-4 h-4 text-slate-600" />
-    <div class="flex gap-1 bg-slate-200 rounded-lg p-1">
+  <div class="flex items-center gap-1 sm:gap-2">
+    <Globe class="h-4 w-4 text-slate-600" />
+    <div class="flex gap-1 rounded-lg bg-slate-200 p-1">
       <button
         v-for="lang in languages"
         :key="lang.code"
         @click="changeLanguage(lang.code)"
         :class="[
-          'px-3 py-1 rounded text-sm font-medium transition-colors',
+          'rounded px-2 py-1 text-xs font-medium transition-colors sm:px-3 sm:text-sm',
           locale === lang.code
             ? 'bg-white text-slate-900 shadow'
             : 'text-slate-600 hover:text-slate-900'
         ]"
       >
-        {{ lang.flag }} {{ lang.code.toUpperCase() }}
+        <span>{{ lang.flag }}</span>
+        <span class="hidden sm:inline">{{ lang.code.toUpperCase() }}</span>
       </button>
     </div>
   </div>
