@@ -23,6 +23,7 @@ const navItems = computed(() => {
     { to: '/profile', label: t('dashboard.myProfile') },
     { to: '/messages', label: t('dashboard.messages') },
     { to: '/downloads', label: t('dashboard.downloads') },
+    { to: '/workflows', label: t('dashboard.workflows') },
   ]
 })
 

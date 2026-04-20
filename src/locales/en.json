@@ -23,7 +23,9 @@
     "messages": "Messages",
     "checkInbox": "Check your inbox",
     "downloads": "Downloads",
-    "accessYourFiles": "Access your files"
+    "accessYourFiles": "Access your files",
+    "workflows": "Workflows",
+    "monitorProcesses": "Monitor syncs and automation runs"
   },
   "nav": {
     "home": "Home",
@@ -50,5 +52,15 @@
     "date": "Date",
     "download": "Download",
     "empty": "No downloads available yet."
+  },
+  "workflows": {
+    "title": "Process Status",
+    "subtitle": "{count} workflow run(s) monitored",
+    "lastUpdated": "Last updated",
+    "statusSuccess": "Successful",
+    "statusRunning": "Running",
+    "statusPending": "Pending",
+    "statusFailed": "Needs attention",
+    "empty": "No workflow runs available yet."
   }
 }

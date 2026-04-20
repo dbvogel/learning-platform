@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { useUserStore } from '@/stores/userStore'
 import { useRouter } from 'vue-router'
-import { User, MessageSquare, Download, LogOut } from 'lucide-vue-next'
+import { User, MessageSquare, Download, LogOut, Activity } from 'lucide-vue-next'
 import { useI18n } from 'vue-i18n'
 
 const userStore = useUserStore()
@@ -38,6 +38,13 @@ const menuItems = computed(() => [
     route: '/downloads',
     color: 'from-orange-400 to-orange-600',
   },
+  {
+    title: t('dashboard.workflows'),
+    description: t('dashboard.monitorProcesses'),
+    icon: Activity,
+    route: '/workflows',
+    color: 'from-cyan-500 to-slate-700',
+  },
 ])
 
 const navigate = (route: string) => {
@@ -55,7 +62,7 @@ const navigate = (route: string) => {
       </div>
 
       <!-- Menu Tiles Grid -->
-      <div class="mb-6 grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-3 md:mb-8">
+      <div class="mb-6 grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-4 md:mb-8">
         <div
           v-for="item in menuItems"
           :key="item.title"

@@ -23,7 +23,9 @@
     "messages": "Nachrichten",
     "checkInbox": "Überprüfe deinen Posteingang",
     "downloads": "Downloads",
-    "accessYourFiles": "Greifen Sie auf Ihre Dateien zu"
+    "accessYourFiles": "Greifen Sie auf Ihre Dateien zu",
+    "workflows": "Workflows",
+    "monitorProcesses": "Synchronisationen und Automationen überwachen"
   },
   "nav": {
     "home": "Startseite",
@@ -50,5 +52,15 @@
     "date": "Datum",
     "download": "Herunterladen",
     "empty": "Noch keine Downloads verfügbar."
+  },
+  "workflows": {
+    "title": "Prozessstatus",
+    "subtitle": "{count} Workflow-Lauf/Läufe werden überwacht",
+    "lastUpdated": "Zuletzt aktualisiert",
+    "statusSuccess": "Erfolgreich",
+    "statusRunning": "Läuft",
+    "statusPending": "Ausstehend",
+    "statusFailed": "Benötigt Prüfung",
+    "empty": "Noch keine Workflow-Läufe verfügbar."
   }
 }

@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 
 import { ref } from 'vue'
+import { messagesService } from '@/services/messagesService'
 
 export interface Message {
   id: number
@@ -19,17 +20,7 @@ export const useMessagesStore = defineStore('messages', () => {
     loading.value = true
     error.value = null
     try {
-      // TODO: Symfony-Backend implementieren
-      // const response = await fetch('/api/messages')
-      // messages.value = await response.json()
-
-      // Mock data zum testen
-      await new Promise(resolve => setTimeout(resolve, 500)) // Delay simulieren
-      messages.value = [
-        { id: 1, from: 'Admin', subject: 'Welcome!', content: 'Welcome to the platform.', date: '2023-10-01' },
-        { id: 2, from: 'Support', subject: 'Help Available', content: 'Need help? Contact us.', date: '2023-10-05' },
-        { id: 3, from: 'Teacher', subject: 'New Course', content: 'Check out the new Vue course.', date: '2023-10-10' },
-      ]
+      messages.value = await messagesService.getMessages()
     } catch (err) {
       error.value = 'Failed to fetch messages'
       console.error(err)
