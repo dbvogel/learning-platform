@@ -1,16 +1,13 @@
 import { createI18n } from 'vue-i18n'
 import en from './locales/en.json'
 import de from './locales/de.json'
+import { getStoredLanguage } from './composables/usePreferredLanguage'
 
 export type MessageSchema = typeof en
 
-const storedLocale = typeof window !== 'undefined'
-  ? window.localStorage.getItem('language')
-  : null
-
 const i18n = createI18n<{ message: MessageSchema }, 'en' | 'de'>({
   legacy: false,
-  locale: storedLocale === 'de' ? 'de' : 'en',
+  locale: getStoredLanguage(),
   fallbackLocale: 'en',
   messages: {
     en,

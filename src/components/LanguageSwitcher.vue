@@ -1,18 +1,15 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
 import { Globe } from 'lucide-vue-next'
+import { usePreferredLanguage, type AppLanguage } from '@/composables/usePreferredLanguage'
 
-const { locale } = useI18n()
+const { language, setLanguage } = usePreferredLanguage()
 
 const languages = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-]
+] as const
 
-const changeLanguage = (lang: string) => {
-  locale.value = lang as 'en' | 'de'
-  localStorage.setItem('language', lang)
-}
+const changeLanguage = (lang: AppLanguage) => setLanguage(lang)
 </script>
 
 <template>
@@ -22,10 +19,10 @@ const changeLanguage = (lang: string) => {
       <button
         v-for="lang in languages"
         :key="lang.code"
-        @click="changeLanguage(lang.code)"
+        @click="changeLanguage(lang.code as AppLanguage)"
         :class="[
           'rounded px-2 py-1 text-xs font-medium transition-colors sm:px-3 sm:text-sm',
-          locale === lang.code
+          language === lang.code
             ? 'bg-white text-slate-900 shadow'
             : 'text-slate-600 hover:text-slate-900'
         ]"
