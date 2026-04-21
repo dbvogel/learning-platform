@@ -4,8 +4,7 @@ const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 export const workflowsService = {
   async getWorkflowRuns(): Promise<WorkflowRun[]> {
-    // Replace this with a Symfony-backed API call later.
-    // Example: return apiClient.get('/api/workflows')
+    // Später echte Symfony-API, für jetzt nur Mock-Daten
     await wait(450)
 
     return [

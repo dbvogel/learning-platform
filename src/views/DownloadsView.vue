@@ -21,7 +21,7 @@ const handleBack = () => {
 
 const handleDownload = (fileName: string) => {
   alert(`Downloading: ${fileName}`)
-  // TODO: Implement actual download logic
+  // TODO: Echte Download-Logik noch bauen
 }
 </script>
 
@@ -38,8 +38,8 @@ const handleDownload = (fileName: string) => {
       <Card class="border-2 border-orange-200 shadow-lg mb-6">
         <CardHeader class="bg-linear-to-r from-orange-400 to-orange-600 text-white rounded-t-lg">
           <div class="flex items-center gap-3 sm:gap-4">
-            <div class="rounded-full bg-white bg-opacity-20 p-2 sm:p-3">
-              <Download class="h-6 w-6 sm:h-8 sm:w-8" />
+            <div class="rounded-full bg-white/20 p-2 sm:p-3">
+              <Download class="h-6 w-6 text-white sm:h-8 sm:w-8" />
             </div>
             <div class="min-w-0">
               <CardTitle class="text-xl text-white sm:text-2xl">{{ t('downloads.downloads') }}</CardTitle>

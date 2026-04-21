@@ -4,8 +4,7 @@ const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 export const messagesService = {
   async getMessages(): Promise<Message[]> {
-    // Replace this with a Symfony-backed API call later.
-    // Example: return apiClient.get('/api/messages')
+    // Fakes für jetzt, später kommt die echte Symfony-API
     await wait(500)
 
     return [

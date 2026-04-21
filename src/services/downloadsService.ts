@@ -4,8 +4,7 @@ const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 export const downloadsService = {
   async getDownloads(): Promise<Download[]> {
-    // Replace this with a Symfony-backed API call later.
-    // Example: return apiClient.get('/api/downloads')
+    // Später echte Symfony-API, für jetzt nur Mock-Daten
     await wait(500)
 
     return [

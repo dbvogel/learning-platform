@@ -53,8 +53,8 @@ const router = createRouter({
   }
 })
 
-// **Navigation Guard** (Auth-Schutz)
-router.beforeEach(async (to, _from, next) => {
+// Hier schauen wir, ob du eingeloggt bist
+router.beforeEach(async (to, _from) => {
   const userStore = useUserStore()
 
   const redirect = getAuthRedirect(
@@ -69,11 +69,10 @@ router.beforeEach(async (to, _from, next) => {
   )
 
   if (redirect) {
-    next(redirect)
-    return
+    return redirect
   }
 
-  next()
+  return true
 })
 
 export default router

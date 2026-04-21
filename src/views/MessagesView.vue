@@ -33,8 +33,8 @@ const handleBack = () => {
       <Card class="border-2 border-purple-200 shadow-lg mb-6">
         <CardHeader class="bg-linear-to-r from-purple-400 to-purple-600 text-white rounded-t-lg">
           <div class="flex items-center gap-3 sm:gap-4">
-            <div class="rounded-full bg-white bg-opacity-20 p-2 sm:p-3">
-              <MessageSquare class="h-6 w-6 sm:h-8 sm:w-8" />
+            <div class="rounded-full bg-white/20 p-2 sm:p-3">
+              <MessageSquare class="h-6 w-6 text-white sm:h-8 sm:w-8" />
             </div>
             <div class="min-w-0">
               <CardTitle class="text-xl text-white sm:text-2xl">{{ t('messages.messages') }}</CardTitle>
